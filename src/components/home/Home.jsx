@@ -163,7 +163,7 @@ const Home = () => {
 
       <div className="flex items-center gap-3">
         <img height={26} width={18}
-          src={KITCHEN_AFTER}
+          src={activeProject.itwo}
           alt="LOCATION_IMAGE"
           className=""
         />
