@@ -108,7 +108,7 @@ const Home = () => {
                   <span className="relative z-50 group-hover:text-dull-white text-lg text-dark-black leading-150">
                     View All Projects
                   </span>
-                  <span className="bg-dark-black -translate-x-full absolute left-0 top-0 origin-bottom-left inset-0 transition-all duration-300 ease-in group-hover:translate-x-0 z-0 h-full w-full"></span>
+                  <span className="bg-dark-black -translate-x-full rounded-[50px] absolute left-0 top-0 origin-bottom-left inset-0 transition-all duration-300 ease-in group-hover:translate-x-0 z-0 h-full w-full"></span>
                 </button>
               </div>
             </div>
@@ -203,20 +203,24 @@ const Home = () => {
     />
 
    
-    <span className="absolute left-4 top-4 z-20 rounded-full bg-white px-4 py-2 text-sm font-medium text-black">
+    <span className="absolute left-6 top-6 z-20 rounded-[51px] bg-white px-4 py-2 text-lg font-medium text-dark-black">
       Before
     </span>
 
-    <span className="absolute right-4 top-4 z-20 rounded-full bg-white px-4 py-2 text-sm font-medium text-black">
+    <span className="absolute right-6 top-6 z-20 rounded-[51px] bg-white px-5 py-2 text-lg font-medium text-dark-black">
       After
     </span>
 
     <div
-      className="absolute bottom-0 top-0 z-10 w-0.5 -translate-x-1/2 bg-white pointer-events-none"
+      className="absolute bottom-0 top-0 z-10 w-1 -translate-x-1/2 bg-white pointer-events-none"
       style={{ left: `${sliderPosition}%` }}
     >
-      <div className="absolute left-1/2 top-1/2 flex h-10 w-10 -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-full border border-gray-300 bg-white text-black shadow-md">
-        <span className="text-lg leading-none">↔</span>
+      <div className="absolute left-1/2 top-1/2 flex h-10 w-10 -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-full  bg-dull-white size-12">
+        <span className="text-lg leading-none"><svg width="26" height="26" viewBox="0 0 26 26" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M8.66667 7.58366L3.25 13.0003L8.66667 18.417" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" stroke="#010101"/>
+<path d="M17.3333 7.58366L22.75 13.0003L17.3333 18.417" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" stroke="#010101"/>
+</svg>
+</span>
       </div>
     </div>
 
