@@ -139,7 +139,7 @@ const Home = () => {
 
               
 <div className="mt-12.5 flex items-center justify-between gap-10 max-lg:flex-col">
-  {/* Project Details */}
+  
   <div className="w-full max-w-105">
     <h3 className="mb-3 text-3xl font-semibold text-black md:text-4xl">
       {activeProject.heading}
@@ -184,57 +184,108 @@ const Home = () => {
       </div>
     </div>
   </div>
-  <div className="relative w-full max-w-160 overflow-hidden rounded-xl aspect-4/3">
+  
 
-    <img  height={396} width={594}
-      src={KITCHEN_AFTER}
-      alt="AFTER_RENOVATION"
-      className="absolute inset-0 h-full w-full object-cover"
-    />
+<div className="relative w-full max-w-160 overflow-hidden rounded-xl aspect-4/3">
 
-    
-    <img height={396} width={594}
-      src={KITCHEN_BEFORE}
-      alt="BEFORE_RENOVATION"
-      className="absolute inset-0 h-full w-full object-cover"
-      style={{
-        clipPath: `inset(0 ${100 - sliderPosition}% 0 0)`,
-      }}
-    />
+  {/* After Image */}
+  <img
+    height={396}
+    width={594}
+    src={KITCHEN_AFTER}
+    alt="AFTER_RENOVATION"
+    className="absolute inset-0 h-full w-full object-cover"
+    style={{
+      clipPath: `inset(0 0 0 ${sliderPosition}%)`,
+    }}
+  />
 
-   
-    <span className="absolute left-6 top-6 z-20 rounded-[51px] bg-white px-4 py-2 text-lg font-medium text-dark-black">
+  {/* Before Image */}
+  <img
+    height={396}
+    width={594}
+    src={KITCHEN_BEFORE}
+    alt="BEFORE_RENOVATION"
+    className="absolute inset-0 h-full w-full object-cover"
+    style={{
+      clipPath: `inset(0 ${100 - sliderPosition}% 0 0)`,
+    }}
+  />
+
+  {/* Before Label - Clipped with Slider */}
+  <div
+    className="absolute inset-0 z-20 pointer-events-none"
+    style={{
+      clipPath: `inset(0 ${100 - sliderPosition}% 0 0)`,
+    }}
+  >
+    <span className="absolute left-[25%] top-6 -translate-x-1/2 rounded-[51px] bg-white px-4 py-2 text-lg font-medium text-dark-black">
       Before
     </span>
+  </div>
 
-    <span className="absolute right-6 top-6 z-20 rounded-[51px] bg-white px-5 py-2 text-lg font-medium text-dark-black">
+  {/* After Label - Clipped with Slider */}
+  <div
+    className="absolute inset-0 z-20 pointer-events-none"
+    style={{
+      clipPath: `inset(0 0 0 ${sliderPosition}%)`,
+    }}
+  >
+    <span className="absolute left-[75%] top-6 -translate-x-1/2 rounded-[51px] bg-white px-4 py-2 text-lg font-medium text-dark-black">
       After
     </span>
-
-    <div
-      className="absolute bottom-0 top-0 z-10 w-1 -translate-x-1/2 bg-white pointer-events-none"
-      style={{ left: `${sliderPosition}%` }}
-    >
-      <div className="absolute left-1/2 top-1/2 flex h-10 w-10 -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-full  bg-dull-white size-12">
-        <span className="text-lg leading-none"><svg width="26" height="26" viewBox="0 0 26 26" fill="none" xmlns="http://www.w3.org/2000/svg">
-<path d="M8.66667 7.58366L3.25 13.0003L8.66667 18.417" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" stroke="#010101"/>
-<path d="M17.3333 7.58366L22.75 13.0003L17.3333 18.417" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" stroke="#010101"/>
-</svg>
-</span>
-      </div>
-    </div>
-
-    
-    <input
-      type="range"
-      min="0"
-      max="100"
-      value={sliderPosition}
-      onChange={(e) => setSliderPosition(Number(e.target.value))}
-      aria-label="Compare before and after renovation"
-      className="absolute inset-0 z-30 h-full w-full cursor-ew-resize opacity-0"
-    />
   </div>
+
+  {/* Slider Line */}
+  <div
+    className="pointer-events-none absolute bottom-0 top-0 z-30 w-1 -translate-x-1/2 bg-white"
+    style={{
+      left: `${sliderPosition}%`,
+    }}
+  >
+    <div className="absolute left-1/2 top-1/2 flex size-12 -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-full bg-dull-white">
+
+      <svg
+        width="26"
+        height="26"
+        viewBox="0 0 26 26"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M8.66667 7.58366L3.25 13.0003L8.66667 18.417"
+          strokeWidth="1.5"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+          stroke="#010101"
+        />
+
+        <path
+          d="M17.3333 7.58366L22.75 13.0003L17.3333 18.417"
+          strokeWidth="1.5"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+          stroke="#010101"
+        />
+      </svg>
+
+    </div>
+  </div>
+
+  {/* Range Input */}
+  <input
+    type="range"
+    min="0"
+    max="100"
+    value={sliderPosition}
+    onChange={(e) => setSliderPosition(Number(e.target.value))}
+    aria-label="Compare before and after renovation"
+    className="absolute inset-0 z-40 h-full w-full cursor-ew-resize opacity-0"
+  />
+
+</div>
+
+
 </div>
 
             </div>
